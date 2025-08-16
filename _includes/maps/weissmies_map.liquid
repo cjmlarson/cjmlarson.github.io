@@ -71,12 +71,12 @@
 
         // Fit map to show the entire track with some padding
         map.fitBounds(geoJSON.getBounds(), { padding: [10, 10] });
-        
+
         // Force map to recalculate size (fixes mobile display issues)
         setTimeout(() => {
           map.invalidateSize();
         }, 100);
-        
+
         // Handle window resize events
         let resizeTimeout;
         window.addEventListener('resize', () => {
