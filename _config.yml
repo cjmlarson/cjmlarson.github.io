@@ -519,7 +519,7 @@ third_party_libraries:
     version: "3.6.0"
   leaflet:
     integrity:
-      css: ""  # Removed due to JSDelivr dynamic generation causing SRI failures
+      css: "" # Removed due to JSDelivr dynamic generation causing SRI failures
       js: "sha256-MgH13bFTTNqsnuEoqNPBLDaqxjGH+lCpqrukmXc8Ppg="
       js_map: "sha256-YAoQ3FzREN4GmVENMir8vgHHypC0xfSK3CAxTHCqx1M="
     local:
