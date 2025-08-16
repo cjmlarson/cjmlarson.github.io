@@ -1,7 +1,8 @@
 <script>
   // Custom Weissmies map with markers
-  document.addEventListener('readystatechange', () => {
-    if (document.readyState === 'complete') {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Small delay to ensure container dimensions are ready
+    setTimeout(() => {
       // Find the geojson code block and process it manually
       document.querySelectorAll('pre>code.language-geojson').forEach((elem) => {
         const jsonData = elem.textContent;
@@ -70,7 +71,21 @@
 
         // Fit map to show the entire track with some padding
         map.fitBounds(geoJSON.getBounds(), { padding: [10, 10] });
+        
+        // Force map to recalculate size (fixes mobile display issues)
+        setTimeout(() => {
+          map.invalidateSize();
+        }, 100);
+        
+        // Handle window resize events
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            map.invalidateSize();
+          }, 150);
+        });
       });
-    }
+    }, 50); // 50ms delay to ensure DOM is ready
   });
 </script>

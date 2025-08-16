@@ -89,7 +89,9 @@
     defer
     rel="stylesheet"
     href="{{ site.third_party_libraries.leaflet.url.css }}"
+    {% if site.third_party_libraries.leaflet.integrity.css and site.third_party_libraries.leaflet.integrity.css != "" %}
     integrity="{{ site.third_party_libraries.leaflet.integrity.css }}"
+    {% endif %}
     crossorigin="anonymous"
   >
 {% endif %}

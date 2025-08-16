@@ -1,7 +1,9 @@
 {% if page.map %}
   <script
     src="{{ site.third_party_libraries.leaflet.url.js }}"
+    {% if site.third_party_libraries.leaflet.integrity.js and site.third_party_libraries.leaflet.integrity.js != "" %}
     integrity="{{ site.third_party_libraries.leaflet.integrity.js }}"
+    {% endif %}
     crossorigin="anonymous"
   ></script>
   {% comment %}
