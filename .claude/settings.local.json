@@ -29,7 +29,12 @@
       "Bash(rm:*)",
       "mcp__playwright__browser_console_messages",
       "Bash(git add:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "mcp__playwright__browser_tab_select",
+      "WebFetch(domain:docs.github.com)",
+      "Bash(npx prettier:*)"
     ],
     "deny": [],
     "ask": []

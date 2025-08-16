@@ -6,7 +6,7 @@
     display: block;
     margin: 2rem auto;
   }
-  
+
   // For images followed by captions (em tags)
   p > img + em,
   p > em:has(+ p > img) {
