@@ -34,7 +34,12 @@
       "Bash(git commit:*)",
       "mcp__playwright__browser_tab_select",
       "WebFetch(domain:docs.github.com)",
-      "Bash(npx prettier:*)"
+      "Bash(npx prettier:*)",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" \"https://github.com/cjmlarson/cjmlarson.github.io/pull/new/feature/add-strava-link\")",
+      "Bash(gh pr list:*)",
+      "Bash(git pull:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)"
     ],
     "deny": [],
     "ask": []
