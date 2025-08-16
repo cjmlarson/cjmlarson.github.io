@@ -1,11 +1,25 @@
-**/*.map
-**/*.min.css
-**/*.min.js
+# Ignore minified/bundled JavaScript
+assets/js/distillpub/
+
+# Ignore generated files
+_site/
+.jekyll-cache/
+.sass-cache/
+vendor/
+
+# Ignore third-party libraries
+_sass/font-awesome/
+assets/plotly/
+lighthouse_results/
+
+# Ignore Jekyll SCSS with Liquid tags
 assets/css/main.scss
-assets/js/search-data.js
-assets/js/distillpub/template.v2.js
-assets/js/search/*.js
-assets/plotly/demo.html
-lighthouse_results/**
-_posts/2015-10-20-math.md
-_sass/font-awesome/*.scss
+
+# Ignore data files that shouldn't be formatted
+*.min.js
+*.min.css
+*.webp
+*.jpg
+*.png
+*.gif
+*.ico
