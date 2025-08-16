@@ -1,0 +1,46 @@
+// Post-specific image styling
+.post-content {
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+  }
+  
+  // For images followed by captions (em tags)
+  p > img + em,
+  p > em:has(+ p > img) {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// Responsive image sizing for blog posts
+@media (min-width: 768px) {
+  .post-content {
+    img {
+      max-width: 90%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .post-content {
+    img {
+      max-width: 85%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .post-content {
+    img {
+      max-width: 80%;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+_site
+.bundle
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.DS_store
+.ruby-version
+.tweet-cache
+Gemfile.lock
+assets/libs/
+node_modules/
+vendor
+.idea
+
+# OS generated files
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Image source files (keep processed versions only)
+*.HEIC
+*.heic
+
+# Drafts (not ready for publication)
+_drafts/

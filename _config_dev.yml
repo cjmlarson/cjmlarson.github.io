@@ -1,0 +1,22 @@
+# Development overrides - disables slow plugins
+# Use with: bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
+# Disable image optimization (huge time saver)
+imagemagick:
+  enabled: false
+
+# Disable minification
+jekyll-minifier:
+  enabled: false
+
+# Disable scholar plugin if not needed
+scholar:
+  enabled: false
+
+# Faster Sass compilation
+sass:
+  style: expanded # instead of compressed
+  sourcemap: development
+
+# Limit regeneration
+limit_posts: 5

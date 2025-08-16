@@ -1,0 +1,32 @@
+# Ultra-fast development mode - bare minimum plugins
+# Use with: bundle exec jekyll serve --config _config.yml,_config_fast.yml
+
+# Disable ALL slow plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+
+# Disable image optimization
+imagemagick:
+  enabled: false
+
+# Disable minification
+jekyll-minifier:
+  enabled: false
+
+# Disable scholar
+scholar:
+  enabled: false
+
+# Disable jupyter
+jekyll-jupyter-notebook:
+  enabled: false
+
+# Fast Sass
+sass:
+  style: expanded
+  sourcemap: development
+
+# Limit posts/collections
+limit_posts: 5

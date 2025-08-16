@@ -1,0 +1,1 @@
+- Jekyll auto-reload is working! Changes to files are automatically detected and rebuilt in ~5 seconds thanks to `--watch --force_polling --incremental` flags in docker-compose.yml. No need to restart Docker for content changes.

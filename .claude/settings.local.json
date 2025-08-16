@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(bundle install:*)",
+      "Bash(claude mcp:*)",
+      "mcp__compadre__read_email",
+      "Bash(docker logs:*)",
+      "Bash(docker-compose restart:*)",
+      "mcp__playwright__browser_navigate",
+      "Bash(timeout 15s docker logs -f cjmlarsongithubio-jekyll-1)",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_resize",
+      "Bash(mkdir:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker-compose:*)",
+      "Bash(timeout 10 docker logs -f cjmlarsongithubio-jekyll-1)",
+      "Bash(python:*)",
+      "Bash(cp:*)",
+      "Bash(timeout 15 docker logs -f cjmlarsongithubio-jekyll-1)",
+      "Bash(curl:*)",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_evaluate",
+      "Bash(rm:*)",
+      "mcp__playwright__browser_console_messages",
+      "Bash(git add:*)",
+      "Bash(git rm:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

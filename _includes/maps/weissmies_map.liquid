@@ -1,0 +1,84 @@
+<script>
+// Custom Weissmies map with markers
+document.addEventListener('readystatechange', () => {
+  if (document.readyState === 'complete') {
+    // Find the geojson code block and process it manually
+    document.querySelectorAll('pre>code.language-geojson').forEach((elem) => {
+      const jsonData = elem.textContent;
+      const backup = elem.parentElement;
+      backup.classList.add('unloaded');
+      
+      // Create leaflet node
+      let mapElement = document.createElement('div');
+      mapElement.classList.add('map');
+      mapElement.style.height = '400px';
+      backup.after(mapElement);
+
+      // Initialize our own map
+      var map = L.map(mapElement);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+      
+      // Add the GeoJSON track
+      let geoJSON = L.geoJSON(JSON.parse(jsonData), {
+        style: {
+          color: '#3388ff',
+          weight: 3,
+          opacity: 0.8
+        }
+      }).addTo(map);
+
+      // Create custom markers
+      var startIcon = L.divIcon({
+        html: '<div style="background-color: #28a745; border: 2px solid white; border-radius: 50%; width: 16px; height: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
+        className: 'custom-marker',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+
+      var endIcon = L.divIcon({
+        html: '<div style="background-color: #dc3545; border: 2px solid white; border-radius: 50%; width: 16px; height: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
+        className: 'custom-marker',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+
+      var hutIcon = L.divIcon({
+        html: '<div style="background-color: #ffc107; border: 2px solid white; border-radius: 3px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-size: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">🏠</div>',
+        className: 'custom-marker',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+
+      var summitIcon = L.divIcon({
+        html: '<div style="background-color: #6f42c1; border: 2px solid white; border-radius: 3px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-size: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">🏔️</div>',
+        className: 'custom-marker',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+
+      // Add markers
+      L.marker([46.094179, 7.957607], {icon: startIcon})
+        .addTo(map)
+        .bindPopup('<b>Start:</b> Saas-Almagell');
+
+      L.marker([46.139431, 7.99129], {icon: endIcon})
+        .addTo(map)
+        .bindPopup('<b>Finish:</b> Hohsaas');
+
+      L.marker([46.107418216115946, 8.007988430686533], {icon: hutIcon})
+        .addTo(map)
+        .bindPopup('<b>Sleep:</b> Almageller Hut');
+
+      L.marker([46.127778, 8.011944], {icon: summitIcon})
+        .addTo(map)
+        .bindPopup('<b>Summit:</b> Weissmies (4,017m)');
+
+      // Fit map to show the entire track with some padding
+      map.fitBounds(geoJSON.getBounds(), {padding: [10, 10]});
+    });
+  }
+});
+</script>
