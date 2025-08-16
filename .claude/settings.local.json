@@ -39,7 +39,8 @@
       "Bash(gh pr list:*)",
       "Bash(git pull:*)",
       "Bash(gh run list:*)",
-      "Bash(gh run view:*)"
+      "Bash(gh run view:*)",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" \"https://github.com/cjmlarson/cjmlarson.github.io/pull/new/fix/prettier-formatting\")"
     ],
     "deny": [],
     "ask": []
